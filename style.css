@@ -1,0 +1,218 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background: linear-gradient(white,white),url("bg-tesh.jpg");
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+  z-index:100;
+}
+
+.menu-btn{
+  font-size:26px;
+  cursor:pointer;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{width:40px;}
+
+.icons{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  font-size:20px;
+}
+
+.icons img{
+  width:32px;
+  border-radius:50%;
+}
+
+/* SIDE MENU */
+#menu-toggle{display:none;}
+
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-250px;
+  width:250px;
+  height:100%;
+  background:#111;
+  z-index: 9999;
+  transition:0.3s;
+}
+
+.side-menu a{
+  display:block;
+  padding:15px;
+  color:white;
+  text-decoration:none;
+}
+.menu-btn{
+  position: relative;
+  z-index: 10000;
+  cursor: pointer;
+  font-size: 26px;
+  color: #000;
+}
+.side-menu a:hover{
+  background:#333;
+}
+
+#menu-toggle:checked ~ .side-menu{
+  left:0;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("dd.jpeg") no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  position:relative;
+  display:grid;
+  justify-content:center;
+  place-items:center;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+  position:relative;
+  color:solid black;
+  text-align:center;
+  
+}
+
+.hero-content h1{
+  font-size:40px;
+}
+
+.section{
+  padding:40px 20px;
+}
+
+/* PRODUCTS */
+.products {
+  display: flex;
+  gap: 20px;        /* المسافة بين المنتجات */
+  justify-content: center;
+}
+
+.product {
+  width: 200px;
+  text-align: center;
+  transition: 0.4s;   /* باش الحركة تكون ناعمة */
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+  
+}
+.product:hover {
+  transform: scale(1.1);     /* يكبر شوية */
+}
+.product-page {
+  background-color: #ffffff;
+}
+
+
+
+
+.old{color888;text-decoration:line-through;}
+.new{color:#c00;font-weight:bold;}
+
+/* FORM */
+form{
+  background:white;
+  padding:20px;
+  max-width:400px;
+  margin:auto;
+  border-radius:10px;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+
+button{
+  background:#111;
+  color:white;
+  border:none;
+  padding:12px;
+  width:100%;
+  cursor:pointer;
+}
+
+/* FLOAT ICONS */
+.float{
+  position:fixed;
+  right:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:24px;
+  z-index:200;
+}
+
+.whatsapp{
+  bottom:90px;background:#25D366;
+}
+.instagram{
+  bottom:20px;
+  background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
+  
+}
+
+/* تحديد الحركة */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* النص كيبدا نازل بـ 30 بكسل */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* النص كيرجع لبلاصتو الأصلية */
+    }
+}
+
+/* تطبيق الحركة على الكنابة */
+.animate-text {
+    opacity: 0; /* كيكون مخفي في الأول */
+    animation: fadeInUp 1.5s ease-out forwards; /* كياخد ثانية ونص باش يظهر */
+}
+
